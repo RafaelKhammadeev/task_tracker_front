@@ -1,0 +1,11 @@
+.my-description {
+    font-size: 20px;
+}
+
+.my-description-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
