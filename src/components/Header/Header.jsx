@@ -7,10 +7,18 @@ const StyledHeader = styled.header`
   position: sticky;
 `;
 
+const StyledHeaderTextCenter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+`;
+
 const Header = () => {
   return (
     <StyledHeader>
-      <div className="header-footer-center"> Task Tracker </div>
+      <StyledHeaderTextCenter> Task Tracker </StyledHeaderTextCenter>
     </StyledHeader>
   );
 };

@@ -6,10 +6,18 @@ const StyledFooter = styled.footer`
   padding: 0.5rem 1rem;
 `;
 
+const StyledFooterTextCenter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+`;
+
 const Footer = () => {
   return (
     <StyledFooter>
-      <h1 className="header-footer-center"> 2023 Khammadeev Rafael </h1>
+      <StyledFooterTextCenter> ©Khammadeev Rafael 2023 </StyledFooterTextCenter>
     </StyledFooter>
   );
 };
