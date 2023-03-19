@@ -1,15 +1,14 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import "./index.css";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./components/pages";
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
