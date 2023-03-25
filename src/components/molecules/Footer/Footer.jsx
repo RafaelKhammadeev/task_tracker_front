@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
-  background: teal;
+  background: #a3a3a3;
   padding: 0.5rem 1rem;
   position: fixed;
   left: 0;
