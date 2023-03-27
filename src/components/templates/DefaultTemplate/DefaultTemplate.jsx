@@ -4,7 +4,7 @@ import Header from "../../molecules/Header";
 import Footer from "../../molecules/Footer";
 
 const MainContent = styled.div`
-  background: #3c9f7f;
+  background: white;
 `;
 
 const DefaultTemplate = ({ children }) => {

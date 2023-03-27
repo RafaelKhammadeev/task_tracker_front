@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "../../atoms/Link";
 
 const StyledHeader = styled.header`
-  background: teal;
+  background: #a3a3a3;
   padding: 0.5rem 1rem;
   position: sticky;
 `;
@@ -18,7 +19,10 @@ const StyledHeaderTextCenter = styled.div`
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledHeaderTextCenter> Task Tracker </StyledHeaderTextCenter>
+      <StyledHeaderTextCenter>
+        Task Tracker
+        <Link href="/projects" label="projects" />
+      </StyledHeaderTextCenter>
     </StyledHeader>
   );
 };
