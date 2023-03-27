@@ -27,6 +27,7 @@
         "allowTernary": true
       }
     ],
+    "no-unused-vars": "off",
     "no-restricted-exports": ["error", {
       "restrictedNamedExports": [
         "then"
