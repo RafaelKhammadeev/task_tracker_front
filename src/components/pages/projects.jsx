@@ -12,46 +12,55 @@ const GroupCard = styled.div`
 
 const mockProjects = [
   {
+    id: 1,
     name: "Project #1",
     description: "It's my first",
     createdAt: "22 days ago",
   },
   {
+    id: 2,
     name: "Project #1",
     description: "It's my first project",
     createdAt: "22 days ago",
   },
   {
+    id: 3,
     name: "Project #1",
     description: "It's my first",
     createdAt: "22 days ago",
   },
   {
+    id: 4,
     name: "Project #1",
     description: "It's my first project",
     createdAt: "22 days ago",
   },
   {
+    id: 5,
     name: "Project #1",
     description: "It's my first",
     createdAt: "22 days ago",
   },
   {
+    id: 6,
     name: "Project #1",
     description: "It's my first project",
     createdAt: "22 days ago",
   },
   {
+    id: 7,
     name: "Project #1",
     description: "It's my first",
     createdAt: "22 days ago",
   },
   {
+    id: 8,
     name: "Project #1",
     description: "It's my first project",
     createdAt: "22 days ago",
   },
   {
+    id: 9,
     name: "Project #1",
     description: "It's my first project",
     createdAt: "22 days ago",
@@ -60,7 +69,7 @@ const mockProjects = [
 
 const ProjectsPage = () => {
   const groupProjectCard = mockProjects.map((project) => (
-    <Card name={project.name} description={project.description} createdAt={project.createdAt} />
+    <Card key={project.id} name={project.name} description={project.description} createdAt={project.createdAt} />
   ));
   return (
     <DefaultTemplate>
