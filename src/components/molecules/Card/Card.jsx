@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../atoms/Button";
+import Link from "../../atoms/Link";
 
 const StyledCard = styled.div`
   background: #e2e2e2;
@@ -29,20 +29,22 @@ const CardText = styled.div`
   word-break: break-all;
 `;
 
-const Card = ({ name = "", description = "", createdAt = "" }) => {
+const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
   return (
     <StyledCard>
       <div>
         <CardTitle> Name: </CardTitle>
-        <CardText> {name} </CardText>
+        <CardText>
+          <Link href={`project/${id}`} color="#0170E7FF" label={name} />
+        </CardText>
         <CardTitle> Description: </CardTitle>
         <CardText> {description} </CardText>
         <CardTitle> CreatedAt: </CardTitle>
         <CardText> {createdAt} </CardText>
         <RowStyled>
-          <Button color="#0170E7FF" label="Task" />
-          <Button color="green" label="Edit" />
-          <Button color="red" label="Destroy" />
+          <Link href={`project/${id}/tasks`} color="#0170E7FF" label="Task" />
+          <Link href="#" color="green" label="Edit" />
+          <Link href={`project/${id}`} color="red" label="Destroy" />
         </RowStyled>
       </div>
     </StyledCard>
