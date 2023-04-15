@@ -6,7 +6,6 @@ import Button from "../atoms/Button";
 const TasksPage = () => {
   const navigate = useNavigate();
   const { projectId } = useParams();
-  console.log(projectId);
 
   return (
     <DefaultTemplate>
