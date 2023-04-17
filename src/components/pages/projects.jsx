@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import DefaultTemplate from "../templates/DefaultTemplate";
 import Button from "../atoms/Button";
 import Card from "../molecules/Card";
-import { useProjects } from "../../lib/hooks/states/projects";
 
 const GroupCard = styled.div`
   display: flex;
