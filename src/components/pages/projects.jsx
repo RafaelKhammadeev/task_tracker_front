@@ -74,7 +74,13 @@ const ProjectsPage = () => {
   const navigate = useNavigate();
 
   const groupProjectCard = mockProjects.map((project) => (
-    <Card key={`card-${v4()}`} id={project.id} name={project.name} description={project.description} createdAt={project.createdAt} />
+    <Card
+      key={`card-${v4()}`}
+      id={project.id}
+      name={project.name}
+      description={project.description}
+      createdAt={project.createdAt}
+    />
   ));
   return (
     <DefaultTemplate>

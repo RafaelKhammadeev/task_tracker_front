@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "../../atoms/Link";
+import Button from "../../atoms/Button";
+import DestroyWindow from "../DestroyWindow";
 
 const StyledCard = styled.div`
   background: #e2e2e2;
@@ -30,6 +32,8 @@ const CardText = styled.div`
 `;
 
 const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
+  const [isDestroyModalObject, setIsDestroyModalOpen] = useState(false);
+
   return (
     <StyledCard>
       <div>
@@ -44,9 +48,18 @@ const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
         <RowStyled>
           <Link href={`project/${id}/tasks`} color="#0170E7FF" label="Task" />
           <Link href="#" color="green" label="Edit" />
-          <Link href={`project/${id}`} color="red" label="Destroy" />
+          <Button onClick={() => setIsDestroyModalOpen(true)} color="red" label="Destroy" />
         </RowStyled>
       </div>
+      {isDestroyModalObject && (
+        <DestroyWindow
+          isOpen={isDestroyModalObject}
+          projectName={`project ${name}`}
+          setIsOpen={setIsDestroyModalOpen}
+          yesLink="#"
+          noLink="/projects"
+        />
+      )}
     </StyledCard>
   );
 };
