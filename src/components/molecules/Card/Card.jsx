@@ -56,8 +56,6 @@ const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
           isOpen={isDestroyModalObject}
           projectName={`project ${name}`}
           setIsOpen={setIsDestroyModalOpen}
-          yesLink="#"
-          noLink="/projects"
         />
       )}
     </StyledCard>
