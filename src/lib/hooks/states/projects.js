@@ -8,6 +8,7 @@ export const useProjects = () => {
 
   return {
     projects: data?.projects || [],
+
     loading,
     error,
   };

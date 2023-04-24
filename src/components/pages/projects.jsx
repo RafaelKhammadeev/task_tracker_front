@@ -13,6 +13,7 @@ const GroupCard = styled.div`
 
 const ProjectsPage = () => {
   const { projects } = useProjects();
+  console.log(projects);
 
   const groupProjectCard = projects.map((project) => (
     <Card key={project.id} name={project.name} description={project.description} createdAt={project.createdAt} />
