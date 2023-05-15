@@ -16,6 +16,7 @@ const GroupCard = styled.div`
 
 const ProjectsPage = () => {
   const { projects } = useProjects();
+  console.log(projects);
 
   const navigate = useNavigate();
 
