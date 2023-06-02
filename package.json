@@ -24,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ci:jest": "jest --ci",
+    "ci:lint-js": "eslint --ext .js,.jsx ./"
   },
   "lint-staged": {
     "*.{js,jsx}": [
