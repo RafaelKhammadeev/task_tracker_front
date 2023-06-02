@@ -5,6 +5,7 @@ import apolloClient from "./lib/apolloClient";
 import HomePage from "./components/pages";
 import ProjectsPage from "./components/pages/projects";
 import TasksPage from "./components/pages/tasks";
+import ProjectPage from "./components/pages/project";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/project/:projectId/tasks" element={<TasksPage />} />
+          <Route path="/project/:projectId" element={<ProjectPage />} />
         </Routes>
       </BrowserRouter>
     </ApolloProvider>

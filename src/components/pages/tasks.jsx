@@ -5,7 +5,8 @@ import { v4 } from "uuid";
 import DefaultTemplate from "../templates/DefaultTemplate";
 import Button from "../atoms/Button";
 import { useProject } from "../../lib/hooks/states/project";
-import Card from "../molecules/Card";
+import Card from "../molecules/CardProject";
+import CardTask from "../molecules/CardTask";
 
 const GroupCard = styled.div`
   display: flex;
@@ -18,15 +19,8 @@ const TasksPage = () => {
   const { projectId } = useParams();
   const { project, loading } = useProject({ projectId });
   const navigate = useNavigate();
-  console.log(project, loading);
   const groupTaskCard = project?.tasks?.map((task) => (
-    <Card
-      key={`card-${v4()}`}
-      id={task.id}
-      name={task.name}
-      description={task.description}
-      createdAt={task.createdAt}
-    />
+    <CardTask key={`card-${v4()}`} id={task.id} title={task.title} description={task.description} state={task.state} />
   ));
 
   return (
