@@ -39,7 +39,7 @@ const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
       <div>
         <CardTitle> Name: </CardTitle>
         <CardText>
-          <Link href={`project/${id}`} color="#0170E7FF" label={name} />
+          <Link href={`project/${id}`} color="#e2e2e2" textColor="black" label={name} />
         </CardText>
         <CardTitle> Description: </CardTitle>
         <CardText> {description} </CardText>
