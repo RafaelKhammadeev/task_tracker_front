@@ -4,8 +4,12 @@ import projectFragment from "../fragments/projectFragment";
 
 export default gql`
   ${projectFragment}
-  mutation DestroyProject($input: DestroyProjectInput!) {
-    destroyProject(input: $input) {
+  mutation CreateProject($input: CreateProjectInput!) {
+    createProject(input: $input) {
+      errors {
+        message
+        path
+      }
       project {
         ...ProjectInfo
       }
