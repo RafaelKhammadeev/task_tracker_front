@@ -12,6 +12,8 @@
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/anchor-is-valid": "off",
     "react/function-component-definition": [
       "error",
       {
@@ -34,5 +36,12 @@
       ]
     }],
     "jsx-a11y/anchor-is-valid": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./"]
+      }
+    }
   }
 }
