@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { v4 } from "uuid";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,7 @@ import Button from "../atoms/Button";
 import { useProjects } from "../../lib/hooks/states/projects";
 import CardProject from "../molecules/CardProject";
 import { useCreateProject } from "../../lib/hooks/actions/createProject";
+import CreateProjectWindow from "../molecules/CreateProjectWindow";
 
 const GroupCard = styled.div`
   display: flex;
@@ -16,8 +17,8 @@ const GroupCard = styled.div`
 `;
 
 const ProjectsPage = () => {
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const { projects } = useProjects();
-  const [createProject] = useCreateProject();
 
   const navigate = useNavigate();
 
@@ -33,7 +34,8 @@ const ProjectsPage = () => {
   return (
     <DefaultTemplate>
       <Button label="Go Back" onClick={() => navigate(-1)} />
-      <Button label="Create Project" onClick={() => createProject({ name: "test", description: "lol" })} />
+      <Button label="Create Project" onClick={() => setIsCreateModalOpen(true)} />
+      {isCreateModalOpen && <CreateProjectWindow setIsOpen={setIsCreateModalOpen} isOpen={isCreateModalOpen} />}
       <GroupCard>{groupProjectCard}</GroupCard>
     </DefaultTemplate>
   );

@@ -1,6 +1,6 @@
 import React from "react";
-import * as Yup from 'yup';
-import { useFormik } from 'formik';
+import * as Yup from "yup";
+import { useFormik } from "formik";
 import styled from "styled-components";
 
 import Button from "src/components/atoms/Button";
@@ -20,7 +20,7 @@ const ErrorWrapper = styled.div`
   color: #e18c8c;
   font-size: 0.75rem;
   margin-top: 0.25rem;
-`
+`;
 
 const StyledLabel = styled.label`
   display: flex;
@@ -38,20 +38,20 @@ const Input = styled.input`
 const CreateProjectWindow = ({ isOpen, setIsOpen }) => {
   const onSubmit = () => {
     setIsOpen(!isOpen);
-  }
+  };
   const [createProject] = useCreateProject({ onSubmit });
 
   const schema = Yup.object().shape({
     name: Yup.string()
-      .min(2, 'Должно содержать больше 2 символов')
-      .max(50, 'Максимальная длина 50 символов')
-      .required('Это обязательное поле'),
+      .min(2, "Должно содержать больше 2 символов")
+      .max(50, "Максимальная длина 50 символов")
+      .required("Это обязательное поле"),
   });
 
   const formik = useFormik({
     initialValues: {
-      name: '',
-      description: '',
+      name: "",
+      description: "",
     },
     validationSchema: schema,
     onSubmit: createProject,
@@ -63,22 +63,12 @@ const CreateProjectWindow = ({ isOpen, setIsOpen }) => {
         <Wrapper>
           <StyledLabel htmlFor="name">
             Name
-            <Input
-              id="name"
-              name="name"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-            />
+            <Input id="name" name="name" onChange={formik.handleChange} value={formik.values.email} />
             <ErrorWrapper> {formik.errors.name} </ErrorWrapper>
           </StyledLabel>
           <StyledLabel htmlFor="description">
             Description
-            <Input
-              id="description"
-              name="description"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-            />
+            <Input id="description" name="description" onChange={formik.handleChange} value={formik.values.email} />
           </StyledLabel>
         </Wrapper>
         <Button type="submit" label="Create" />
