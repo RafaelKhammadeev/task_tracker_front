@@ -13,6 +13,7 @@
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
+    "jsx-a11y/anchor-is-valid": "off",
     "react/function-component-definition": [
       "error",
       {
@@ -28,6 +29,7 @@
         "allowTernary": true
       }
     ],
+    "no-unused-vars": "off",
     "no-restricted-exports": ["error", {
       "restrictedNamedExports": [
         "then"

@@ -18,11 +18,6 @@ const StyledCard = styled.div`
   padding: 8px;
 `;
 
-const RowStyled = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 const CardTitle = styled.div`
   font-weight: bold;
 `;
@@ -31,7 +26,12 @@ const CardText = styled.div`
   word-break: break-all;
 `;
 
-const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
+const RowStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const CardProject = ({ id = 1, name = "", description = "", createdAt = "" }) => {
   const [isDestroyModalObject, setIsDestroyModalOpen] = useState(false);
 
   return (
@@ -39,7 +39,7 @@ const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
       <div>
         <CardTitle> Name: </CardTitle>
         <CardText>
-          <Link href={`project/${id}`} color="#0170E7FF" label={name} />
+          <Link href={`project/${id}`} color="#e2e2e2" textColor="black" label={name} />
         </CardText>
         <CardTitle> Description: </CardTitle>
         <CardText> {description} </CardText>
@@ -62,4 +62,4 @@ const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
   );
 };
 
-export default Card;
+export default CardProject;
