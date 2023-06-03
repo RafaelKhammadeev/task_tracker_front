@@ -6,6 +6,7 @@ import DefaultTemplate from "../templates/DefaultTemplate";
 import Button from "../atoms/Button";
 import { useProjects } from "../../lib/hooks/states/projects";
 import CardProject from "../molecules/CardProject";
+import { useCreateProject } from "../../lib/hooks/actions/createProject";
 
 const GroupCard = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ const GroupCard = styled.div`
 
 const ProjectsPage = () => {
   const { projects } = useProjects();
+  const [createProject] = useCreateProject();
 
   const navigate = useNavigate();
 
@@ -31,6 +33,7 @@ const ProjectsPage = () => {
   return (
     <DefaultTemplate>
       <Button label="Go Back" onClick={() => navigate(-1)} />
+      <Button label="Create Project" onClick={() => createProject({ name: "test", description: "lol" })} />
       <GroupCard>{groupProjectCard}</GroupCard>
     </DefaultTemplate>
   );

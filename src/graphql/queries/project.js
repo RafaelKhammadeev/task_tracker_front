@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import projectFragments from "../fragments/projectFragments";
-import taskFragments from "../fragments/taskFragments";
+import projectFragments from "../fragments/projectFragment";
+import taskFragments from "../fragments/taskFragment";
 
 export default gql`
   ${projectFragments}

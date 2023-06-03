@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "../../atoms/Link";
 import Button from "../../atoms/Button";
-import DestroyWindow from "../DestroyWindow";
+import DestroyProjectWindow from "../DestroyProjectWindow";
 
 const StyledCard = styled.div`
   background: #e2e2e2;
@@ -52,10 +52,11 @@ const CardProject = ({ id = 1, name = "", description = "", createdAt = "" }) =>
         </RowStyled>
       </div>
       {isDestroyModalObject && (
-        <DestroyWindow
+        <DestroyProjectWindow
           isOpen={isDestroyModalObject}
           projectName={`project ${name}`}
           setIsOpen={setIsDestroyModalOpen}
+          id={id}
         />
       )}
     </StyledCard>

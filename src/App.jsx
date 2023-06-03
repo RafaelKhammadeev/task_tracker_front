@@ -7,7 +7,6 @@ import ProjectsPage from "./components/pages/projects";
 import TasksPage from "./components/pages/tasks";
 import ProjectPage from "./components/pages/project";
 
-
 const App = () => {
   return (
     <ApolloProvider client={apolloClient}>
