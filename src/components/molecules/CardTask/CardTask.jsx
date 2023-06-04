@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Link from "../../atoms/Link";
 import Button from "../../atoms/Button";
-import DestroyWindow from "../DestroyWindow";
+import DestroyTaskWindow from "../DestroyTaskWindow";
 
 const StyledCard = styled.div`
   background: #e2e2e2;
@@ -18,11 +17,6 @@ const StyledCard = styled.div`
   padding: 8px;
 `;
 
-const RowStyled = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 const CardTitle = styled.div`
   font-weight: bold;
 `;
@@ -31,35 +25,30 @@ const CardText = styled.div`
   word-break: break-all;
 `;
 
-const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
+const CardTask = ({ id = 1, title = "", description = "", state = "" }) => {
   const [isDestroyModalObject, setIsDestroyModalOpen] = useState(false);
 
   return (
     <StyledCard>
       <div>
-        <CardTitle> Name: </CardTitle>
-        <CardText>
-          <Link href={`project/${id}`} color="#0170E7FF" label={name} />
-        </CardText>
+        <CardTitle> Title: </CardTitle>
+        <CardText> {title} </CardText>
         <CardTitle> Description: </CardTitle>
         <CardText> {description} </CardText>
-        <CardTitle> CreatedAt: </CardTitle>
-        <CardText> {createdAt} </CardText>
-        <RowStyled>
-          <Link href={`project/${id}/tasks`} color="#0170E7FF" label="Task" />
-          <Link href="#" color="green" label="Edit" />
-          <Button onClick={() => setIsDestroyModalOpen(true)} color="red" label="Destroy" />
-        </RowStyled>
+        <CardTitle> State: </CardTitle>
+        <CardText> {state} </CardText>
       </div>
+      <Button onClick={() => setIsDestroyModalOpen(true)} color="red" label="Destroy" />
       {isDestroyModalObject && (
-        <DestroyWindow
+        <DestroyTaskWindow
           isOpen={isDestroyModalObject}
-          projectName={`project ${name}`}
+          projectName={`project ${title}`}
           setIsOpen={setIsDestroyModalOpen}
+          id={id}
         />
       )}
     </StyledCard>
   );
 };
 
-export default Card;
+export default CardTask;
