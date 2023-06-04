@@ -20,7 +20,14 @@ const TasksPage = () => {
   const { project, loading } = useProject({ projectId });
   const navigate = useNavigate();
   const groupTaskCard = project?.tasks?.map((task) => (
-    <CardTask key={`card-${v4()}`} id={task.id} title={task.title} description={task.description} state={task.state} />
+    <CardTask
+      key={`card-${v4()}`}
+      id={task.id}
+      title={task.title}
+      description={task.description}
+      state={task.state}
+      deadlineAt={task.deadlineAt}
+    />
   ));
 
   return (

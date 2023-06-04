@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Button from "../../atoms/Button";
+import DestroyTaskWindow from "../DestroyTaskWindow";
 
 const StyledCard = styled.div`
   background: #e2e2e2;
@@ -23,7 +25,9 @@ const CardText = styled.div`
   word-break: break-all;
 `;
 
-const CardTask = ({ title = "", description = "", state = "" }) => {
+const CardTask = ({ id = 1, title = "", description = "", state = "" }) => {
+  const [isDestroyModalObject, setIsDestroyModalOpen] = useState(false);
+
   return (
     <StyledCard>
       <div>
@@ -34,6 +38,15 @@ const CardTask = ({ title = "", description = "", state = "" }) => {
         <CardTitle> State: </CardTitle>
         <CardText> {state} </CardText>
       </div>
+      <Button onClick={() => setIsDestroyModalOpen(true)} color="red" label="Destroy" />
+      {isDestroyModalObject && (
+        <DestroyTaskWindow
+          isOpen={isDestroyModalObject}
+          projectName={`project ${title}`}
+          setIsOpen={setIsDestroyModalOpen}
+          id={id}
+        />
+      )}
     </StyledCard>
   );
 };
